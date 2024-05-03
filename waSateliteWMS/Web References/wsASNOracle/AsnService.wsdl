@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AsnService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.0.203:82/AsnService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.0.203:82/AsnService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.0.203:82/AsnService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Data" />
+      <xsd:import schemaLocation="http://192.168.0.203:82/AsnService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Report" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAsnService_GetAvailableAsns_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableAsns" />
+  </wsdl:message>
+  <wsdl:message name="IAsnService_GetAvailableAsns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableAsnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAsnService_SaveAsns_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAsns" />
+  </wsdl:message>
+  <wsdl:message name="IAsnService_SaveAsns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAsnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAsnService_GetPrepacks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrepacks" />
+  </wsdl:message>
+  <wsdl:message name="IAsnService_GetPrepacks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrepacksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAsnService_GenerateAsnReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAsnReport" />
+  </wsdl:message>
+  <wsdl:message name="IAsnService_GenerateAsnReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAsnReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAsnService">
+    <wsdl:operation name="GetAvailableAsns">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAsnService/GetAvailableAsns" message="tns:IAsnService_GetAvailableAsns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAsnService/GetAvailableAsnsResponse" message="tns:IAsnService_GetAvailableAsns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAsns">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAsnService/SaveAsns" message="tns:IAsnService_SaveAsns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAsnService/SaveAsnsResponse" message="tns:IAsnService_SaveAsns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrepacks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAsnService/GetPrepacks" message="tns:IAsnService_GetPrepacks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAsnService/GetPrepacksResponse" message="tns:IAsnService_GetPrepacks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAsnReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAsnService/GenerateAsnReport" message="tns:IAsnService_GenerateAsnReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAsnService/GenerateAsnReportResponse" message="tns:IAsnService_GenerateAsnReport_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAsnService" type="tns:IAsnService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAvailableAsns">
+      <soap:operation soapAction="http://tempuri.org/IAsnService/GetAvailableAsns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAsns">
+      <soap:operation soapAction="http://tempuri.org/IAsnService/SaveAsns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrepacks">
+      <soap:operation soapAction="http://tempuri.org/IAsnService/GetPrepacks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAsnReport">
+      <soap:operation soapAction="http://tempuri.org/IAsnService/GenerateAsnReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AsnService">
+    <wsdl:port name="BasicHttpBinding_IAsnService" binding="tns:BasicHttpBinding_IAsnService">
+      <soap:address location="http://192.168.0.203:82/AsnService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
