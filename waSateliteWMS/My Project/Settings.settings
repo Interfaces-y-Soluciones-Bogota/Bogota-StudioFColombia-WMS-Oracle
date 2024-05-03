@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="strConexionGT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=192.168.0.240;Initial Catalog=GTIntegration_WMS;User ID=is;Password=Tzku!apu39;Integrated Security=False</Value>
+    </Setting>
+    <Setting Name="waSateliteWMS_wsASN_AsnService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.154:8085/AsnService.svc</Value>
+    </Setting>
+    <Setting Name="waSateliteWMS_wsGT_wsGenerarPlano" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.199/GTIntegrationProduccionwms/ServiciosWeb/wsGenerarPlano.asmx</Value>
+    </Setting>
+    <Setting Name="waSateliteWMS_wsASNOracle_AsnService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.203:82/AsnService.svc</Value>
+    </Setting>
+    <Setting Name="waSateliteWMS_wsUnoEE_WSUNOEE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.105:8070/wsunoee.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.0.203:82/AsnService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Data" />
+  <xs:import schemaLocation="http://192.168.0.203:82/AsnService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Report" />
+  <xs:element name="GetAvailableAsns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="initalDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableAsnsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Data" minOccurs="0" name="GetAvailableAsnsResult" nillable="true" type="q1:ArrayOfAsn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAsns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Data" minOccurs="0" name="asnCollection" nillable="true" type="q2:ArrayOfAsn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAsnsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Data" minOccurs="0" name="SaveAsnsResult" nillable="true" type="q3:Transaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrepacks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="creationDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrepacksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Data" minOccurs="0" name="GetPrepacksResult" nillable="true" type="q4:ArrayOfPrepack" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateAsnReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reportName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="asnId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateAsnReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/STF.Asn.Entity.Report" minOccurs="0" name="GenerateAsnReportResult" nillable="true" type="q5:AsnReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
